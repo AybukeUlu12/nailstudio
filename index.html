@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nail Studio — Design Your Nails</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar"><span class="brand-mark">✿</span><span class="brand">nail studio<span class="brand-dot">.</span></span><span class="top-note">YOUR LITTLE CREATIVE CORNER ✧</span></header>
+    <main>
+      <section class="intro"><p class="eyebrow">✦ WELCOME TO YOUR VIRTUAL SALON ✦</p><h1>Little details, <em>big personality.</em></h1><p>Pick a nail, find your colour, add a little sparkle. Make it yours.</p></section>
+      <section class="workspace" aria-label="Nail design studio">
+        <div class="preview-panel">
+          <div class="panel-top"><span class="section-tag">01 / YOUR CANVAS</span><span class="sparkle">✧ &nbsp; ♡ &nbsp; ✧</span></div>
+          <div class="mode-wrap"><span class="control-label">STUDIO MODE</span><div class="mode-switch" role="group" aria-label="Studio mode"><button type="button" class="mode active" data-mode="free" aria-pressed="true">✦ Free Mode <small>3 charms</small></button><button type="button" class="mode" data-mode="limited" aria-pressed="false">♡ Limited Mode <small>1 charm</small></button></div></div>
+          <div class="hand-stage"><span class="stage-doodle doodle-a">✳</span><span class="stage-doodle doodle-b">✦</span><span class="stage-doodle doodle-c">♡</span>
+            <div class="hand-art" aria-label="Illustrated hand with five individually selectable nails">
+              <svg class="hand-base" viewBox="0 0 390 430" aria-hidden="true" focusable="false"><defs><linearGradient id="skin" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#f9d8c9"/><stop offset="1" stop-color="#eeb7a6"/></linearGradient></defs><path d="M112 430 C106 399 92 366 74 340 L29 284 C12 261 22 242 39 240 C49 238 59 245 67 254 L114 308 L108 143 C107 120 118 111 132 111 C147 111 154 123 155 142 L162 283 L161 79 C161 55 172 43 189 43 C207 43 217 57 217 80 L217 281 L220 113 C220 89 233 78 249 80 C265 82 273 96 272 117 L263 288 L278 167 C281 144 294 135 308 139 C325 143 330 159 326 180 L307 326 C304 357 306 391 313 430 Z" fill="url(#skin)" stroke="#db9c8e" stroke-width="2.7" stroke-linejoin="round"/><path d="M119 331 Q140 345 159 339 M201 347 Q219 353 239 345 M270 348 Q286 353 299 340" fill="none" stroke="#dba194" stroke-width="1.6" opacity=".5"/></svg>
+              <div class="nail-slots" id="nailSlots" role="group" aria-label="Select a nail"></div>
+            </div>
+            <div class="hand-caption">♡ &nbsp; TAP A NAIL TO GET STARTED &nbsp; ♡</div>
+          </div>
+          <div class="preview-footer"><span id="selectedLabel">Selected: Thumb</span><span id="capacityLabel">Decorations: 0 / 3</span></div>
+        </div>
+        <div class="tools-panel"><div class="panel-top"><span class="section-tag">02 / THE FUN PART</span><span class="tools-flower">✿</span></div><h2>Let's get <em>creative!</em></h2><p class="tools-intro">Everything you need for your dream mani.</p>
+          <section class="tool-section"><div class="tool-heading"><span class="step">01</span><h3>Pick a colour</h3></div><div class="swatches" id="colourOptions" role="group" aria-label="Nail colours"></div></section>
+          <section class="tool-section"><div class="tool-heading"><span class="step">02</span><h3>Choose a shape</h3></div><div class="shape-options" id="shapeOptions" role="group" aria-label="Nail shapes"></div></section>
+          <section class="tool-section"><div class="tool-heading"><span class="step">03</span><h3>Add some charm</h3></div><p class="hint">Choose a charm, then choose Top, Middle or Bottom. You can reuse a charm on different nails.</p><div class="charm-options" id="charmOptions" role="group" aria-label="Nail decorations"></div><div class="position-options" id="positionOptions" role="group" aria-label="Charm position"></div><button type="button" class="text-button" id="removeCharm">Remove last charm</button></section>
+          <section class="consultant" aria-labelledby="consultantTitle">
+            <div class="consultant-head"><span class="section-tag">04 / A CONVERSATION</span><span class="consultant-sparkle">✧</span></div>
+            <h3 id="consultantTitle">Your Nail Consultant <span aria-hidden="true">♡</span></h3>
+            <p class="consultant-subtitle">Your choices shape what the studio says next.</p>
+            <div class="condition-row" role="group" aria-label="Consultant comparison condition">
+              <button type="button" data-condition="generic" aria-pressed="false">A · Generic replies</button>
+              <button type="button" data-condition="adaptive" aria-pressed="true">B · Remembers you</button>
+            </div>
+            <div class="consultant-dialogue" id="consultantDialogue" role="status" aria-live="polite"></div>
+            <div class="consultant-actions" id="consultantActions">
+              <button type="button" id="acceptSuggestion" class="primary-btn">Accept suggestion</button>
+              <button type="button" id="rejectSuggestion" class="secondary-btn">Try something else</button>
+            </div>
+            <p class="consultant-note" id="consultantNote">Choose a colour to begin the conversation.</p>
+          </section>
+          <div class="feedback" id="feedback" role="status" aria-live="polite">Choose a nail and start creating! ♡</div>
+          <div class="actions"><button type="button" id="cancelSelection" class="secondary-btn">Cancel Selection</button><button type="button" id="resetDesign" class="primary-btn">↻ Reset Design</button></div>
+        </div>
+      </section>
+      <section class="reflection"><span class="section-tag">03 / THINK ABOUT IT</span><h2>How much is <em>your choice?</em></h2><p>Try A and B with the same sequence: select a colour, reject the suggestion, then ask again. Does the earlier turn change the next reply? Free and Limited Mode still control charm limits.</p><div class="reflection-pills"><span>YOU CHOOSE THE DESIGN</span><span>THE SYSTEM SETS THE LIMITS</span></div></section>
+    </main>
+    <footer>MADE WITH ♡ & A LITTLE BIT OF SPARKLE <span>NAIL STUDIO ©</span></footer>
+  </div>
+</body>
+</html>
